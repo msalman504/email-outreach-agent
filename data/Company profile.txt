@@ -1,3 +1,6 @@
-[Your Company Name]
+AutoBits
 We provide AI-driven marketing solutions to help businesses scale their outreach.
 Our platform automates email personalization and delivery.
+
+### the software isn't yet using txt file, if you want it to use txt instead of pdf to get company 
+profile data, make changes accordingly.
