@@ -1,4 +1,4 @@
-# 🤖 Autonomous Email Outreach Agent
+# Autonomous Email Outreach Agent
 
 A fully autonomous AI agent that manages your entire email outreach campaigns. It reads your leads, understands your company's value, and craft hyper-personalized emails that get replies.
 
