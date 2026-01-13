@@ -1,0 +1,17 @@
+
+# Environment variables
+.env
+debug_env.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Output logs and data
+output/
+sent_log.csv
+
+# IDE
+.vscode/
+.idea/
