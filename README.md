@@ -1,4 +1,4 @@
-# Autonomous Email Outreach Agent
+# 🤖 Autonomous Email Outreach Agent
 
 A fully autonomous AI agent that manages your entire email outreach campaigns. It reads your leads, understands your company's value, and craft hyper-personalized emails that get replies.
 
@@ -31,25 +31,51 @@ Once you press "Run", the agent takes over:
 
 ---
 
-## 🚀 Setup Guide
+## 🚀 Complete Setup Guide
 
-### 1. Installation
+Follow these steps to get the agent running on your local machine.
+
+### 1. Prerequisites
+-   Python 3.8 or higher installed.
+-   A generic Gmail/Outlook account or a Hostinger email (recommended).
+-   API Keys for Google Gemini (Free tier works).
+
+### 2. Install the Agent
 ```bash
+# Clone the repository
+git clone https://github.com/msalman504/email-outreach-agent.git
+
+# Navigate into the folder
+cd email-outreach-agent
+
+# (Optional) Create a virtual environment
+python -m venv venv
+# Windows:
+.\venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Configuration
-Create a `.env` file with your keys:
+### 3. Configuration
+Create a file named `.env` in the root folder and add your specific details:
 ```ini
-GOOGLE_API_KEY=your_gemini_key
+GOOGLE_API_KEY=your_gemini_key_here
+# (Optional) Add backup keys if you have them:
+GOOGLE_API_KEY_2=secondary_key
+
+# SMTP Settings (Example: Hostinger)
 EMAIL_ADDRESS=your_email@domain.com
 EMAIL_PASSWORD=your_password
 SMTP_SERVER=smtp.hostinger.com
+SMTP_PORT=465
 ```
 
-### 3. Your Data
--   **Leads**: Put your list in `data/leads.csv` (Columns: `Name`, `Email`, `Biggest challenge?`).
--   **Profile**: Put your details in `data/Company profile.pdf`.
+### 4. Prepare Your Data
+-   **Leads**: Save your leads as `data/leads.csv`.
+-   **Company Profile**: Save your PDF as `data/Company profile.pdf`.
 
 ---
 
@@ -64,10 +90,17 @@ SMTP_SERVER=smtp.hostinger.com
 
 ---
 
-## ✨ Key Features
+## ✨ Features Breakdown
 
 -   **Auto-Failover**: If one AI key fails, it instantly switches to backup keys (or Groq) to keep sending.
 -   **Smart Logging**: Maintains a persistent database of sent emails.
 -   **Rate Limiting**: Sleeps between emails to act like a human.
 -   **PDF Attachments**: Auto-detects and attaches your profile.
+
+### 🔍 Full Observability (LangSmith)
+This agent is integrated with **LangSmith** for enterprise-grade tracing.
+-   **Trace Every Step**: See exactly what the AI "thought" before writing the email.
+-   **Debug Latency**: Monitor how long each generation takes.
+-   **Token Usage**: Track your API costs in real-time.
+-   To enable, simply add your `LANGCHAIN_API_KEY` to the `.env` file.
 
